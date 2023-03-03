@@ -1,0 +1,14 @@
+{
+  "cif": "003243034S",
+  "name": "FM Company",
+  "departments": [
+    {
+      "id": 1,
+      "name": "Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Desarrollo"
+    }
+  ]
+}
