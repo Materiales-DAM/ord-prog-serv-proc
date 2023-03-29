@@ -2,12 +2,14 @@ package org.iesfm.examen.rest.dao.inmemory;
 
 import org.iesfm.examen.rest.dao.ActorDAO;
 import org.iesfm.examen.rest.entity.Actor;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class InMemoryActorDAO implements ActorDAO {
     private Map<Integer, Map<String, Actor>> actorsPerFilm = new HashMap<>();
 
