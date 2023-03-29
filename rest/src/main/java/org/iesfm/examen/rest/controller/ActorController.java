@@ -33,4 +33,20 @@ public class ActorController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @DeleteMapping(path = "/films/{filmId}/actors/{nif}")
+    public ResponseEntity<Void> addActorToFilm(
+            @PathVariable("filmId") int filmId,
+            @PathVariable("nif") String nif
+    ) {
+        try {
+            if(filmService.deleteActor(filmId, nif)) {
+                return ResponseEntity.ok().build();
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (FilmNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

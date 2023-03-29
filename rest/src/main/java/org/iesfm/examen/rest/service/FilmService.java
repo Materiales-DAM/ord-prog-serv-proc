@@ -28,4 +28,12 @@ public class FilmService {
             return actorDAO.addActor(actor);
         }
     }
+
+    public boolean deleteActor(int filmId, String nif) throws FilmNotFoundException {
+        if(filmDAO.existFilm(filmId)) {
+            return actorDAO.deleteActorInFilm(filmId, nif);
+        } else {
+            throw new FilmNotFoundException(filmId);
+        }
+    }
 }
